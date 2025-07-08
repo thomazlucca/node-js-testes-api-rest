@@ -11,6 +11,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'linebreak-style': 0,
     'import/extensions': 0,
     'prefer-destructuring': 0,
     'no-underscore-dangle': 0,

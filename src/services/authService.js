@@ -11,7 +11,7 @@ class AuthService {
       }
 
       if (!data.senha) {
-        throw new Error('A senha de usuario é obrigatório.');
+        throw new Error('A senha de usuario é obrigatória.');
       }
 
       const usuario = await Usuario.pegarPeloEmail(data.email);
@@ -48,6 +48,12 @@ class AuthService {
       if (!data.senha) {
         throw new Error('A senha de usuário é obrigatória!');
       }
+
+      const usuarioCadastrado = await Usuario.pegarPeloEmail(data.email);
+      if (usuarioCadastrado) {
+        throw new Error('O email já esta cadastrado!');
+      }
+
       data.senha = await bcryptjs.hash(data.senha, 8);
 
       const usuario = new Usuario(data);

@@ -1,1 +1,2 @@
 - Retornar a data de devolução do livro validando a quantidade de dias alugados
+- Número de dias alugados deve ser maior que 0
